@@ -1,0 +1,125 @@
+<% layout ("/layouts/boilerplate") %>
+<body>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <br /><br />
+      <h3>Create a New Listing</h3>
+      <form
+        method="post"
+        action="/listings"
+        class="needs-validation"
+        enctype="multipart/form-data"
+        novalidate
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            class="form-control"
+            type="text"
+            name="listing[title]"
+            placeholder="Add a catchy title"
+            required
+          />
+          <div class="valid-feedback">Title look good.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            name="listing[description]"
+            class="form-control"
+            required
+          ></textarea>
+          <div class="invalid-feedback">PLS Enter a Valid Description.</div>
+        </div>
+
+        <!-- <div class="mb-3">
+          <label for="image" class="form-label">Image Link</label>
+          <input
+            type="text"
+            name="listing[image]"
+            class="form-control"
+            placeholder="Enter the image URL/Link"
+          /> -->
+        <!-- </div> -->
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Listing Image </label>
+          <input
+            type="file"
+            name="listing[image]"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input
+              name="listing[price]"
+              class="form-control"
+              placeholder="1700"
+              required
+            />
+            <div class="invalid-feedback">
+              You must add valid Price before submitting.
+            </div>
+          </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              name="listing[country]"
+              class="form-control"
+              placeholder="India"
+              required
+            />
+            <div class="invalid-feedback">
+              You must add valid Country before submitting.
+            </div>
+          </div>
+          <div class="mb-3 col-md-8">
+            <label for="category" class="form-label">Select a Category</label>
+            <select
+              name="listing[category]"
+              class="form-control"
+              placeholder="India"
+              required
+            >
+              <option value="" disabled selected>Select a category</option>
+              <option value="Trending">Trending</option>
+              <option value="Farm">Farm</option>
+              <option value="Tiny Home">Tiny Home</option>
+              <option value="Dome">Dome</option>
+              <option value="Mountain">Mountain</option>
+              <option value="Camping">Camping</option>
+              <option value="Tropical">Tropical</option>
+              <option value="Mansion">Mansion</option>
+            </select>
+            <div class="invalid-feedback">
+              You must add valid Category before submitting.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            name="listing[location]"
+            class="form-control"
+            placeholder="Goa,Jaipur,Jammu"
+            required
+          />
+          <div class="invalid-feedback">
+            You must add valid location before submitting.
+          </div>
+        </div>
+
+        <br /><br />
+        <button class="btn btn-dark add-btn">Add</button>
+        <br /><br />
+      </form>
+    </div>
+  </div>
+</body>
