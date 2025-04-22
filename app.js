@@ -66,9 +66,9 @@ const sessionOption = {
   },
 };
 
-// app.get("/", (req, res) => {
-//   res.send("Hi i am root");
-// });
+app.get("/", (req, res) => {
+  res.render("/listings");
+});
 
 app.use(session(sessionOption)); // session
 app.use(flash()); //flash
